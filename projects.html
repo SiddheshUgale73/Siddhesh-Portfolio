@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Data Engineering Projects - ETL Pipelines, Data Warehouses, Cloud Solutions">
+    <title>Projects Showcase | Siddhesh Ugale</title>
+    <link rel="icon" type="image/png" href="images/favicon.png">
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Syne:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">
+                <a href="index.html" class="navbar-logo-link">
+                    <img src="images/favicon.png" alt="Logo" class="navbar-logo-img">
+                    <span class="logo-text">siddhesh<span class="logo-dot">.</span></span>
+                </a>
+            </div>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="about.html" class="nav-link">About</a></li>
+                <li><a href="projects.html" class="nav-link active">Projects</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Projects Section -->
+    <section class="projects-section">
+        <div class="container">
+            <h2 class="section-title">My Projects</h2>
+            <p class="section-subtitle">Data engineering solutions and implementations</p>
+            <p class="projects-intro" style="margin-top: 20px;">
+                Here are some of my data engineering projects. Each project demonstrates expertise in building scalable
+                data pipelines,
+                cloud data solutions, and database optimization techniques.
+            </p>
+            <div class="projects-grid" id="allProjectsGrid">
+                <!-- Projects will be loaded dynamically -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Siddhesh Ugale. All rights reserved.</p>
+            <div class="social-links">
+                <a href="https://www.linkedin.com/in/siddhesh-ugale-ab4563284" class="social-link" target="_blank"><i
+                        class="fab fa-linkedin"></i> LinkedIn</a>
+                <a href="https://github.com/SiddheshUgale73" class="social-link" target="_blank"><i
+                        class="fab fa-github"></i> GitHub</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+    <script>
+        // Load all projects on projects page
+        document.addEventListener('DOMContentLoaded', () => {
+            const allProjectsGrid = document.getElementById('allProjectsGrid');
+            if (allProjectsGrid) {
+                const allProjects = [
+                    {
+                        title: '📊 Result Analyzer',
+                        description: 'Automated University Result Processing System. Extracts data from PDFs, processes it with Pandas, and generates academic analytics, toppers list, and performance reports with high accuracy.',
+                        tech: 'Python, Flask, PDFPlumber, Pandas, HTML, CSS',
+                        image: 'images/result-analyzer.png',
+                        link: 'http://127.0.0.1:5000/'
+                    },
+                    {
+                        title: 'Swiggy Data Integration & Analysis',
+                        description: 'Built a data integration and analytics pipeline by ingesting Swiggy datasets from AWS S3 into Snowflake. Designed Fact and Dimension models using Star Schema for customer, restaurant, delivery, and order datasets. Performed data cleaning, transformation, and normalization ensuring high-quality structured data. Implemented ETL workflows to automate incremental data loads.',
+                        tech: 'SQL, AWS (S3, IAM), Snowflake, ETL',
+                        image: 'images/swiggy-project.png',
+                        link: '#'
+                    },
+                    {
+                        title: 'GreenScan',
+                        description: 'Built an interactive web application that allows users to scan QR codes placed on campus trees to instantly access information about each tree. Displayed rich botanical data including tree name, medicinal uses, benefits, and seasonal appearance. Integrated Angular-based components for smooth navigation.',
+                        tech: 'HTML, CSS, JavaScript, Angular, QR Code API',
+                        image: 'images/greenscan.png',
+                        link: 'https://green-scan-uuhi.vercel.app/'
+                    },
+                    {
+                        title: 'Garage Database Management System',
+                        description: 'Designed a normalized relational database with 8–9+ interlinked tables such as Customers, Spare Parts, Service Records, Vehicles, Billing, etc. Implemented database objects including constraints, indexes, views to maintain data accuracy and performance. Executed 50+ SQL operations including joins, nested subqueries, grouping, and transaction controls.',
+                        tech: 'Oracle SQL, PL/SQL',
+                        image: 'images/garage-project.png',
+                        link: '#'
+                    }
+                ];
+
+                allProjectsGrid.innerHTML = allProjects.map(project => `
+                    <div class="project-card">
+                        <div class="project-image-container">
+                            <img src="${project.image}" alt="${project.title}" class="project-image" 
+                                 onerror="this.style.background='linear-gradient(135deg, #007aff 0%, #6366f1 100%)'">
+                        </div>
+                        <div class="project-content">
+                            <h3 class="project-title">${project.title}</h3>
+                            <p class="project-tech"><strong>Tech Stack:</strong> ${project.tech || 'N/A'}</p>
+                            <p class="project-description">${project.description}</p>
+                            <a href="${project.link}" class="project-link" target="_blank" rel="noopener noreferrer">View Project <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                `).join('');
+            }
+        });
+    </script>
+</body>
+
+</html>
