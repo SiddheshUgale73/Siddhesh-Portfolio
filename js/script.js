@@ -55,6 +55,13 @@ if (typingElement) typeText();
 // ===== PROJECTS DATA =====
 const sampleProjects = [
     {
+        title: 'ATS Resume Analyzer (Agentic AI)',
+        description: 'Advanced AI-driven tool using Agentic AI and Fine-tuned LLMs to analyze resumes. Features robust PDF extraction and precise candidate ranking.',
+        tech: 'Python, Agentic AI, LLM, NLP, PDFPlumber',
+        image: 'images/ats-analyzer.png',
+        link: '#'
+    },
+    {
         title: '📊 Result Analyzer',
         description: 'Automated extraction and processing of university PDF results with high accuracy. Saves significant time for educational institutions.',
         tech: 'Python, Flask, PDFPlumber, Pandas',
