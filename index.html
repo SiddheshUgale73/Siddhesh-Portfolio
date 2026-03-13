@@ -86,31 +86,40 @@
         </div>
     </section>
 
-    <!-- About Section -->
+    <!-- About Section (Qualifications) -->
     <section id="about" class="about-section scroll-reveal">
         <div class="container">
-            <h2 class="section-title">About Me</h2>
-            <div class="about-grid">
-                <div class="about-text">
-                    <p class="about-bio">
-                        Skilled in Python, Oracle SQL/PLSQL, Snowflake, and AWS for building scalable data pipelines and ETL workflows. 
-                        Experienced in data analysis using Pandas, NumPy, and Power BI, and developing AI solutions using 
-                        Retrieval-Augmented Generation (RAG), LLMs, and LangChain. 
-                        Passionate about applying data-driven and AI-based solutions to real-world problems.
-                    </p>
-                    <div class="about-info-grid">
-                        <div class="info-card">
-                            <i class="fas fa-graduation-cap"></i>
-                            <h4>Education</h4>
-                            <p>MCA | BCS</p>
-                            <span>SPPU, Nashik</span>
-                        </div>
-                        <div class="info-card">
-                            <i class="fas fa-briefcase"></i>
-                            <h4>Experience</h4>
-                            <p>AI / Data Science Intern</p>
-                            <span>TECHONSY Software</span>
-                        </div>
+            <h2 class="section-title">Qualifications</h2>
+            <p class="section-subtitle">My Education & Experience</p>
+            
+            <div class="qualifications-grid">
+                <!-- Education Column -->
+                <div class="qualifications-column">
+                    <h3 class="qual-heading"><i class="fas fa-graduation-cap"></i> Education</h3>
+                    <div class="qual-item">
+                        <span class="qual-date">Aug 2024 – Present</span>
+                        <h4 class="qual-title">Master of Computer Applications (MCA)</h4>
+                        <p class="qual-org">GESCOE’s R.H. Sapat College of Engineering, Nashik</p>
+                    </div>
+                    <div class="qual-item">
+                        <span class="qual-date">Jul 2021 – Jun 2024</span>
+                        <h4 class="qual-title">Bachelor of Computer Science (BCS)</h4>
+                        <p class="qual-org">Commerce Management and Computer Science College, Nashik</p>
+                    </div>
+                </div>
+
+                <!-- Experience Column -->
+                <div class="qualifications-column">
+                    <h3 class="qual-heading"><i class="fas fa-briefcase"></i> Experience</h3>
+                    <div class="qual-item">
+                        <span class="qual-date">Jan 2026 – Present</span>
+                        <h4 class="qual-title">AI / Data Science Intern</h4>
+                        <p class="qual-org">TECHONSY Software Pvt. Ltd., Pune</p>
+                        <ul class="qual-bullets">
+                            <li>Created VANT AI, a RAG chatbot for document interaction.</li>
+                            <li>Engineered hybrid search (Vector + BM25) systems.</li>
+                            <li>Built AI pipelines using LangChain & Llama-3.</li>
+                        </ul>
                     </div>
                 </div>
             </div>
@@ -121,39 +130,40 @@
     <section id="skills" class="skills-section scroll-reveal">
         <div class="container">
             <h2 class="section-title">Technical Skills</h2>
-            <p class="section-subtitle">My Technologies</p>
-            <div class="skills-grid">
-                <div class="skill-card">
-                    <div class="skill-icon"><i class="fab fa-python" style="color: #3776ab;"></i></div>
-                    <h4>Python</h4>
+            <p class="section-subtitle">My Stack</p>
+            
+            <div class="skills-categories">
+                <!-- Data Engineering & DB -->
+                <div class="skill-cat-card">
+                    <h3 class="cat-title">Data Engineering & DB</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag"><i class="fas fa-database"></i> Snowflake</span>
+                        <span class="skill-tag"><i class="fas fa-code"></i> Oracle SQL/PLSQL</span>
+                        <span class="skill-tag"><i class="fas fa-project-diagram"></i> ETL Pipelines</span>
+                        <span class="skill-tag"><i class="fas fa-layer-group"></i> Data Warehousing</span>
+                    </div>
                 </div>
-                <div class="skill-card">
-                    <div class="skill-icon"><i class="fas fa-database" style="color: #29b5e8;"></i></div>
-                    <h4>Snowflake</h4>
+
+                <!-- AI & Analytics -->
+                <div class="skill-cat-card">
+                    <h3 class="cat-title">AI & Analytics</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag"><i class="fas fa-brain"></i> RAG / LLMs</span>
+                        <span class="skill-tag"><i class="fas fa-link"></i> LangChain</span>
+                        <span class="skill-tag"><i class="fas fa-chart-bar"></i> Power BI</span>
+                        <span class="skill-tag"><i class="fas fa-calculator"></i> Pandas / NumPy</span>
+                    </div>
                 </div>
-                <div class="skill-card">
-                    <div class="skill-icon"><i class="fab fa-aws" style="color: #ff9900;"></i></div>
-                    <h4>AWS</h4>
-                </div>
-                <div class="skill-card">
-                    <div class="skill-icon"><i class="fas fa-brain" style="color: #00a67e;"></i></div>
-                    <h4>AI (RAG/LLM)</h4>
-                </div>
-                <div class="skill-card">
-                    <div class="skill-icon"><i class="fas fa-chart-bar" style="color: #f2c811;"></i></div>
-                    <h4>Power BI</h4>
-                </div>
-                <div class="skill-card">
-                    <div class="skill-icon"><i class="fas fa-code" style="color: #f1e05a;"></i></div>
-                    <h4>SQL/PLSQL</h4>
-                </div>
-                <div class="skill-card">
-                    <div class="skill-icon"><i class="fab fa-git-alt" style="color: #f05032;"></i></div>
-                    <h4>Git/GitHub</h4>
-                </div>
-                <div class="skill-card">
-                    <div class="skill-icon"><i class="fas fa-table" style="color: #1d72b8;"></i></div>
-                    <h4>Pandas/NumPy</h4>
+
+                <!-- Programming & Tools -->
+                <div class="skill-cat-card">
+                    <h3 class="cat-title">Programming & Tools</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag"><i class="fab fa-python"></i> Python</span>
+                        <span class="skill-tag"><i class="fab fa-java"></i> Java</span>
+                        <span class="skill-tag"><i class="fab fa-aws"></i> AWS (S3, RDS)</span>
+                        <span class="skill-tag"><i class="fab fa-github"></i> Git / GitHub</span>
+                    </div>
                 </div>
             </div>
         </div>
