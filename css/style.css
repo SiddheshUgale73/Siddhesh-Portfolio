@@ -1630,3 +1630,272 @@ section {
         gap: 40px;
     }
 }
+/* VANT AI Showcase */
+.vant-showcase {
+    background: #0d1117;
+    border-radius: 30px;
+    border: 1px solid rgba(124, 77, 255, 0.2);
+    padding: 40px;
+    margin: 60px auto 100px;
+    box-shadow: 0 40px 100px -20px rgba(0, 0, 0, 0.5);
+    max-width: 1100px;
+}
+
+.vant-showcase-header {
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+.vant-badge {
+    background: linear-gradient(135deg, #7c4dff, #448aff);
+    color: white;
+    padding: 6px 16px;
+    border-radius: 50px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    display: inline-block;
+    margin-bottom: 15px;
+    letter-spacing: 1px;
+}
+
+.vant-showcase-header h3 {
+    font-size: 2.2rem;
+    color: #fff !important;
+    font-family: 'Syne', sans-serif;
+    margin-bottom: 10px;
+}
+
+.vant-mockup-container {
+    background: #010409;
+    border-radius: 20px;
+    border: 1px solid #30363d;
+    height: 550px;
+    display: flex;
+    overflow: hidden;
+    margin-bottom: 40px;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+}
+
+/* Mockup Sidebar */
+.vant-mockup-sidebar {
+    width: 240px;
+    background: #0d1117;
+    border-right: 1px solid #30363d;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+}
+
+.vant-mockup-logo {
+    font-size: 1.4rem;
+    font-weight: 800;
+    color: #58a6ff;
+    margin-bottom: 30px;
+    font-family: 'Syne', sans-serif;
+}
+
+.vant-sidebar-add {
+    border: 1px dashed #30363d;
+    border-radius: 12px;
+    padding: 15px;
+    text-align: center;
+    color: #8b949e;
+    transition: 0.3s;
+    cursor: pointer;
+    margin-bottom: 30px;
+}
+
+.vant-sidebar-add i {
+    font-size: 1.3rem;
+    display: block;
+    margin-bottom: 8px;
+    color: #58a6ff;
+}
+
+.vant-sidebar-label {
+    font-size: 0.65rem;
+    font-weight: 700;
+    color: #484f58;
+    letter-spacing: 1.5px;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+}
+
+.vant-chat-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 10px 12px;
+    border-radius: 8px;
+    color: #8b949e;
+    font-size: 0.85rem;
+    margin-bottom: 5px;
+}
+
+.vant-chat-item.active {
+    background: rgba(88, 166, 255, 0.1);
+    color: #58a6ff;
+}
+
+.vant-sidebar-empty {
+    color: #30363d;
+    font-size: 0.75rem;
+    margin-top: 5px;
+    font-style: italic;
+}
+
+.vant-sidebar-footer {
+    margin-top: auto;
+    padding-top: 15px;
+    border-top: 1px solid #30363d;
+    color: #8b949e;
+    font-size: 0.85rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* Mockup Main Panel */
+.vant-mockup-main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 24px;
+    background: #010409;
+}
+
+.vant-main-top {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+}
+
+.vant-model-tag {
+    background: rgba(124, 77, 255, 0.1);
+    color: #7c4dff;
+    padding: 6px 14px;
+    border-radius: 50px;
+    font-size: 0.75rem;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    border: 1px solid rgba(124, 77, 255, 0.2);
+}
+
+.vant-model-tag .dot {
+    width: 6px;
+    height: 6px;
+    background: #7c4dff;
+    border-radius: 50%;
+}
+
+.vant-model-dropdown {
+    background: #0d1117;
+    border: 1px solid #30363d;
+    padding: 6px 14px;
+    border-radius: 8px;
+    color: #c9d1d9;
+    font-size: 0.75rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.vant-chat-display {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.vant-chat-placeholder {
+    color: #30363d;
+    font-size: 1.8rem;
+    font-weight: 500;
+}
+
+.vant-chat-input-area {
+    padding-top: 20px;
+}
+
+.vant-input-wrapper {
+    background: #0d1117;
+    border: 1px solid #30363d;
+    border-radius: 12px;
+    padding: 10px 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #484f58;
+    font-size: 0.9rem;
+}
+
+.vant-send-btn {
+    background: #7c4dff;
+    color: white;
+    border: none;
+    width: 34px;
+    height: 34px;
+    border-radius: 8px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.3s;
+}
+
+.vant-send-btn:hover {
+    background: #6236ff;
+    transform: scale(1.05);
+}
+
+/* Features Below Mockup */
+.vant-features-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+    padding: 0 20px;
+}
+
+.v-feat {
+    text-align: center;
+}
+
+.v-feat i {
+    font-size: 1.8rem;
+    color: #7c4dff;
+    margin-bottom: 15px;
+    background: rgba(124, 77, 255, 0.1);
+    width: 60px;
+    height: 60px;
+    line-height: 60px;
+    border-radius: 16px;
+}
+
+.v-feat h4 {
+    color: #fff !important;
+    margin-bottom: 10px;
+    font-size: 1.1rem;
+}
+
+.v-feat p {
+    color: #8b949e;
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+
+@media (max-width: 992px) {
+    .vant-mockup-sidebar {
+        display: none;
+    }
+    .vant-features-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+    .vant-showcase {
+        padding: 25px;
+    }
+    .vant-showcase-header h3 {
+        font-size: 1.8rem;
+    }
+}
