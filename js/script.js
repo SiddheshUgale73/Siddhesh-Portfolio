@@ -61,7 +61,7 @@ const sampleProjects = [
         title: 'VANT AI (RAG Chatbot)',
         description: 'Retrieval-Augmented Generation (RAG) chatbot allowing interaction with private documents. Features hybrid search (Vector + BM25), LangChain pipelines, and FastAPI backend.',
         tech: 'Python, LangChain, Llama-3, FastAPI, ChromaDB',
-        image: '',
+        image: 'images/vant-ai-bg.png',
         link: '#'
     },
     {
