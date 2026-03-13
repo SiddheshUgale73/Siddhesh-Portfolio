@@ -58,9 +58,9 @@ if (typingElement) typeText();
 // ===== PROJECTS DATA =====
 const sampleProjects = [
     {
-        title: 'VANT AI (RAG-Driven Production App)',
-        description: 'Advanced AI application optimized for production hosting. Features RAG (Retrieval-Augmented Generation) with lazy loading, ChromaDB vector search, and a streamlined FastAPI backend for high-performance response times.',
-        tech: 'Python, FastAPI, RAG, ChromaDB, Groq LLM, Render',
+        title: 'VANT AI (RAG Chatbot)',
+        description: 'Retrieval-Augmented Generation (RAG) chatbot allowing interaction with private documents. Features hybrid search (Vector + BM25), LangChain pipelines, and FastAPI backend.',
+        tech: 'Python, LangChain, Llama-3, FastAPI, ChromaDB',
         image: 'images/vant-ai.png',
         link: '#'
     },
@@ -80,15 +80,15 @@ const sampleProjects = [
     },
     {
         title: 'Swiggy Data Integration & Analysis',
-        description: 'Built a data integration pipeline by ingesting Swiggy datasets from AWS S3 into Snowflake. Designed Fact and Dimension models using Star Schema.',
-        tech: 'SQL, AWS (S3, IAM), Snowflake',
+        description: 'Automated ETL pipeline ingesting Swiggy datasets from AWS S3 into Snowflake. Designed Star Schema models and optimized query performance using partitioning.',
+        tech: 'SQL, AWS (S3, IAM), Snowflake, ETL',
         image: 'images/swiggy-project.png',
         link: '#'
     },
     {
         title: 'GreenScan',
-        description: 'Interactive web application that allows users to scan QR codes on campus trees to instantly access botanical and medicinal information.',
-        tech: 'HTML, CSS, JavaScript, Angular',
+        description: 'Angular web application using QR Code API to provide botanical info for campus trees. Improved frontend responsiveness and navigation.',
+        tech: 'HTML, CSS, JavaScript, Angular, QR API',
         image: 'images/greenscan.png',
         link: 'https://green-scan-uuhi.vercel.app/'
     },
@@ -144,6 +144,29 @@ function initReveal() {
         observer.observe(el);
     });
 }
+
+// ===== THEME TOGGLE =====
+const themeToggle = document.getElementById('theme-toggle');
+const themeIcon = themeToggle?.querySelector('i');
+
+function setTheme(theme) {
+    document.documentElement.setAttribute('data-theme', theme);
+    localStorage.setItem('portfolio-theme', theme);
+    if (themeIcon) {
+        themeIcon.className = theme === 'light' ? 'fas fa-moon' : 'fas fa-sun';
+    }
+}
+
+if (themeToggle) {
+    themeToggle.addEventListener('click', () => {
+        const currentTheme = document.documentElement.getAttribute('data-theme');
+        setTheme(currentTheme === 'light' ? 'dark' : 'light');
+    });
+}
+
+// Check for saved theme
+const savedTheme = localStorage.getItem('portfolio-theme') || 'dark';
+setTheme(savedTheme);
 
 document.addEventListener('DOMContentLoaded', () => {
     loadProjects();
