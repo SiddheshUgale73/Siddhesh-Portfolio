@@ -1141,17 +1141,24 @@ section {
 }
 
 .contact-info-cards {
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
     gap: 20px;
 }
 
 .contact-mini-card {
     background: var(--bg-surface);
-    padding: 25px;
+    padding: 20px;
     border-radius: 12px;
     text-align: center;
     border: 1px solid var(--border);
+    transition: var(--transition);
+}
+
+.contact-mini-card:hover {
+    border-color: var(--primary);
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px -10px var(--primary-glow);
 }
 
 .contact-mini-card i {
