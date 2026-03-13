@@ -6,12 +6,15 @@ if (hamburger) {
     hamburger.addEventListener('click', () => {
         navMenu.classList.toggle('active');
         hamburger.classList.toggle('active');
+        // Prevent body scroll when menu is open
+        document.body.style.overflow = navMenu.classList.contains('active') ? 'hidden' : '';
     });
 
     document.querySelectorAll('.nav-link').forEach(link => {
         link.addEventListener('click', () => {
             navMenu.classList.remove('active');
             hamburger.classList.remove('active');
+            document.body.style.overflow = '';
         });
     });
 }
@@ -54,6 +57,13 @@ if (typingElement) typeText();
 
 // ===== PROJECTS DATA =====
 const sampleProjects = [
+    {
+        title: 'VANT AI (RAG-Driven Production App)',
+        description: 'Advanced AI application optimized for production hosting. Features RAG (Retrieval-Augmented Generation) with lazy loading, ChromaDB vector search, and a streamlined FastAPI backend for high-performance response times.',
+        tech: 'Python, FastAPI, RAG, ChromaDB, Groq LLM, Render',
+        image: 'images/vant-ai.png',
+        link: '#'
+    },
     {
         title: 'ATS Resume Analyzer (Agentic AI)',
         description: 'Advanced AI-driven tool using Agentic AI and Fine-tuned LLMs to analyze resumes. Features robust PDF extraction and precise candidate ranking.',
