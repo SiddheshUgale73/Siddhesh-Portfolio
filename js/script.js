@@ -61,7 +61,7 @@ const sampleProjects = [
         title: 'VANT AI (RAG Chatbot)',
         description: 'Retrieval-Augmented Generation (RAG) chatbot allowing interaction with private documents. Features hybrid search (Vector + BM25), LangChain pipelines, and FastAPI backend.',
         tech: 'Python, LangChain, Llama-3, FastAPI, ChromaDB',
-        image: 'images/vant-ai-new.png',
+        image: '',
         link: '#'
     },
     {
@@ -108,9 +108,10 @@ function loadProjects() {
 
     projectsGrid.innerHTML = sampleProjects.map(project => `
         <div class="project-card">
+            ${project.image ? `
             <div class="project-image-container">
                 <img src="${project.image}" alt="${project.title}" class="project-image">
-            </div>
+            </div>` : ''}
             <div class="project-content">
                 <div class="project-tech">${project.tech}</div>
                 <h3 class="project-title">${project.title}</h3>
