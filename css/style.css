@@ -1130,8 +1130,8 @@ section {
     font-size: 1rem;
     font-weight: 500;
 }
+}
 
-/* Contact Section Redesign */
 /* Contact Section Redesign */
 .contact-section {
     padding: 100px 0;
@@ -1386,7 +1386,6 @@ section {
     .contact-form {
         padding: 32px;
     }
-}
 
 /* ===== REFINED CARDS & ANIMATIONS ===== */
 /* Education Cards Improvement */
