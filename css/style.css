@@ -1720,3 +1720,39 @@ section {
         gap: 40px;
     }
 }
+
+/* Contact Section Responsive Overrides */
+@media (max-width: 992px) {
+    .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 50px;
+    }
+    
+    .contact-info-side {
+        text-align: center;
+        align-items: center;
+    }
+    
+    .contact-subtitle {
+        margin: 0 auto;
+    }
+    
+    .contact-methods-grid {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        width: 100%;
+    }
+}
+
+@media (max-width: 640px) {
+    .contact-methods-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .contact-form-side {
+        padding: 30px 20px;
+    }
+    
+    .contact-title {
+        font-size: 2rem;
+    }
+}
