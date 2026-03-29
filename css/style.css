@@ -382,25 +382,74 @@ p.hero-greeting {
 .hero-buttons {
     display: flex;
     gap: 20px;
-    justify-content: center;
 }
 
-.hero-image {
+.hero-image-container {
     display: flex;
     justify-content: center;
     align-items: center;
-    animation: fadeInRight 0.8s ease;
+    animation: fadeInRight 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.hero-image-wrapper {
     position: relative;
+    width: 380px;
+    height: 380px;
+    padding: 15px;
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 50%;
+    border: 1px solid var(--border);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 40px 100px -20px rgba(0, 0, 0, 0.5);
+    transition: var(--transition);
 }
 
-/* Profile Image Styles moved to About Page or global as needed */
-.profile-img {
-    display: none;
+.hero-image-wrapper::before {
+    content: '';
+    position: absolute;
+    inset: -2px;
+    background: linear-gradient(135deg, var(--primary), var(--accent));
+    border-radius: 50%;
+    z-index: -1;
+    opacity: 0.3;
+    transition: var(--transition);
 }
 
-.profile-img:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 20px 40px rgba(0, 102, 255, 0.2);
+.hero-image-wrapper:hover {
+    transform: translateY(-10px) scale(1.02);
+    border-color: var(--primary);
+    box-shadow: 0 60px 120px -30px rgba(6, 182, 212, 0.2);
+}
+
+.hero-image-wrapper:hover::before {
+    opacity: 0.8;
+    filter: blur(10px);
+}
+
+.hero-profile-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    filter: grayscale(20%);
+    transition: var(--transition);
+}
+
+.hero-image-wrapper:hover .hero-profile-img {
+    filter: grayscale(0%);
+}
+
+.hero-image-decoration {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    width: 80px;
+    height: 80px;
+    background: var(--primary);
+    border-radius: 50%;
+    filter: blur(40px);
+    opacity: 0.4;
+    z-index: -1;
 }
 
 /* ===== BUTTONS ===== */
@@ -1714,45 +1763,212 @@ section {
     transform: scale(1.05);
 }
 
+/* ===== RESPONSIVE DESIGN (Consolidated) ===== */
+
+/* Desktop Extra Padding */
+@media (min-width: 1400px) {
+    .container {
+        max-width: 1300px;
+    }
+}
+
+/* Tablet / Small Desktop */
+@media (max-width: 1100px) {
+    .hero-grid {
+        gap: 40px;
+    }
+    
+    .hero-image-wrapper {
+        width: 320px;
+        height: 320px;
+    }
+}
+
+/* Tablet - Stacking & Navigation */
+@media (max-width: 992px) {
+    .hero-grid {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 50px;
+    }
+
+    .hero-content {
+        text-align: center;
+        order: 2;
+    }
+
+    .hero-image-container {
+        order: 1;
+    }
+
+    .hero-description {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .hero-buttons {
+        justify-content: center;
+    }
+}
+
+/* Mobile Navigation & Grid Fixes */
 @media (max-width: 768px) {
-    .qualifications-grid {
+    .navbar {
+        width: 95%;
+        padding: 8px 0;
+        border-radius: 20px;
+        top: 10px;
+    }
+
+    .logo-text {
+        font-size: 1.2rem;
+    }
+
+    /* Hamburger Menu Logic */
+    .hamburger {
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+        cursor: pointer;
+        z-index: 1001;
+        padding: 5px;
+    }
+
+    .hamburger span {
+        display: block;
+        width: 25px;
+        height: 2px;
+        background: var(--text-main);
+        transition: var(--transition);
+        border-radius: 2px;
+    }
+
+    .hamburger.active span:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+        background: var(--primary);
+    }
+
+    .hamburger.active span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .hamburger.active span:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+        background: var(--primary);
+    }
+
+    .nav-menu {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 80%;
+        height: 100vh;
+        background: var(--glass);
+        backdrop-filter: blur(25px);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 30px;
+        transition: 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+        box-shadow: -10px 0 30px rgba(0, 0, 0, 0.3);
+        z-index: 999;
+    }
+
+    .nav-menu.active {
+        right: 0;
+    }
+
+    .nav-link {
+        font-size: 1.5rem;
+        font-weight: 600;
+    }
+
+    .nav-actions .btn-resume {
+        display: none; /* Hide resume btn in navbar on mobile to save space */
+    }
+
+    /* Section Grids */
+    .qualifications-grid,
+    .contact-grid {
         grid-template-columns: 1fr;
         gap: 40px;
     }
+
+    .hero-social-sidebar {
+        display: none; /* Hide sidebar on mobile */
+    }
+
+    .hero-title {
+        font-size: 2.8rem;
+    }
+
+    .highlight-accent {
+        font-size: 2.2rem;
+        letter-spacing: 6px;
+    }
 }
 
-/* Contact Section Responsive Overrides */
-@media (max-width: 992px) {
-    .contact-grid {
-        grid-template-columns: 1fr;
-        gap: 50px;
+/* Small Mobile */
+@media (max-width: 480px) {
+    .container {
+        padding: 0 20px;
     }
-    
-    .contact-info-side {
-        text-align: center;
-        align-items: center;
+
+    .hero-title {
+        font-size: 2.22rem;
     }
-    
-    .contact-subtitle {
-        margin: 0 auto;
+
+    .hero-subtitle {
+        font-size: 1.4rem;
     }
-    
-    .contact-methods-grid {
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+
+    .hero-buttons {
+        flex-direction: column;
         width: 100%;
     }
+
+    .btn {
+        width: 100%;
+    }
+
+    .hero-image-wrapper {
+        width: 280px;
+        height: 280px;
+    }
+
+    .section-title {
+        font-size: 1.8rem;
+    }
+
+    .contact-header-flex {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .contact-profile-img {
+        margin-bottom: 20px;
+    }
 }
 
-@media (max-width: 640px) {
-    .contact-methods-grid {
-        grid-template-columns: 1fr;
-    }
-    
-    .contact-form-side {
-        padding: 30px 20px;
-    }
-    
-    .contact-title {
-        font-size: 2rem;
-    }
+/* Profile Image in Contact Header */
+.contact-header-flex {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    margin-bottom: 30px;
+}
+
+.contact-profile-img {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid var(--primary);
+    box-shadow: 0 10px 20px rgba(6, 182, 212, 0.2);
+    flex-shrink: 0;
+}
+
+.contact-header-text {
+    flex: 1;
 }
